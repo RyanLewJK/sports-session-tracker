@@ -1,15 +1,25 @@
 import sys
 import os
 
-# Allow imports from src/
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
+sys.path.append(
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..")
+    )
+)
 
-from sports import create_sport, get_sports
-from users import create_user, get_users
-from sessions import create_session, get_sessions
-from bookings import create_booking, get_bookings, cancel_booking
-from attendance import mark_attendance, get_attendance
-from courts import create_court, get_courts
+from src.sports import create_sport, get_sports
+from src.users import create_user, get_users
+from src.courts import create_court, get_courts
+from src.sessions import create_session, get_sessions
+from src.bookings import (
+    create_booking,
+    get_bookings,
+    cancel_booking
+)
+from src.attendance import (
+    mark_attendance,
+    get_attendance
+)
 
 
 def run_tests():
